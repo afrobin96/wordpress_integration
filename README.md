@@ -3,7 +3,6 @@
 This plugin enables automatic integration between Moodle and WordPress (with WooCommerce), facilitating the creation and enrollment of users in Moodle courses directly from purchases made in WordPress.
 When a user purchases a course in WooCommerce, the WordPress site sends a request to Moodle via a secure web service (REST API).The plugin in Moodle receives this request, automatically creates the user (if they do not already exist), and enrolls them in the corresponding course.In this way, sales management and course access are carried out without manual intervention, improving the user experience and the efficiency of the educational process.
 
-Translated with DeepL.com (free version)
 
 ## Installing via uploaded ZIP file ##
 
