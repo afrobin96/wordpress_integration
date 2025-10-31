@@ -61,14 +61,17 @@ class user_service extends \core_external\external_api {
             $newuser->auth = 'manual';
             $newuser->confirmed = 1;
             $newuser->mnethostid = $DB->get_field('mnet_host', 'id', ['wwwroot' => $CFG->wwwroot]);
+            $newuser->password_change = 1;
 
-            $newuser->id = user_create_user($newuser);
+            $newuser->id = user_create_user($newuser, false, false);
+            update_internal_user_password($newuser, $password);
             $user = $newuser;
             $created = true;
         } else {
             $created = false;
         }
 
+        
         
         $enrol = enrol_get_plugin('manual');
         if (!$enrol) {
